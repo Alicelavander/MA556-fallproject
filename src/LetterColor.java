@@ -1,5 +1,5 @@
 /*
-ADD REFERENCE
+Reference: https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
  */
 enum LetterColor{
     UNDECIDED(""),

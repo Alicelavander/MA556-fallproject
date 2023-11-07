@@ -5,43 +5,34 @@ import java.util.Scanner;
 
 public class Main {
     static String word; //actual word
-    static ArrayList<String> guesses; //list of words guessed by the user
+    static ArrayList<Word> guesses; //list of words guessed by the user
     static int attempts; // equivalent to the size of the array "guessed"
     static boolean endGame;
 
     public static void main(String[] args){
-//        Frame frame = new Frame();
+        Scanner s = new Scanner(System.in);
 
         //setup new game
         newGame();
-        word = "mania";
-        System.out.println("answer: " + word);
-        Scanner s = new Scanner(System.in);
-
         System.out.println("Welcome to Wordle!");
 
         while(!endGame){
             System.out.print("guess: ");
-            String guess = s.nextLine().substring(0, 5);
+            String response = s.nextLine().substring(0, 5);
+            Word guess = new Word(response, 5);
             guesses.add(0, guess);
 
-//            String response = checkGuess(guess);
+            System.out.println(guess.checkWithAnswer(word));
 
-            System.out.print(checkGuess(guess, word));
-
-//            if(!isLetterIncluded(currentGuess, word)) {
-//                System.out.println("not in word: " + currentGuess);
-//                System.out.println("\nOh no!");
-//                state++;
-//                displayBodyParts(state);
-//                System.out.println();
-//            }
+            if(guess.correctLetters() == guess.length()) endGame = true;
         }
+
+        System.out.println("Correct! Well done. Number of attempts: " + guesses.size());
     }
 
     public static void newGame() {
         word = newWord();
-        guesses = new ArrayList<String>();
+        guesses = new ArrayList<>();
         attempts = 0;
     }
 
@@ -77,39 +68,5 @@ public class Main {
         }
 
         return "error";
-    }
-
-    public static boolean isLetterIncluded(char guess, String correctSequence){
-        boolean included = false;
-        for(char letter: correctSequence.toCharArray()){
-            if(guess == letter) included = true;
-        }
-        return included;
-    }
-
-    public static String checkGuess(String guess, String answer){
-        StringBuilder s = new StringBuilder();
-        String[] color = new String[5];
-
-        for(int i = 0; i < answer.length(); i++){
-            char letter = answer.toCharArray()[i];
-
-            for (int j = 0; j < guess.length(); j++){
-                char wordLetter = guess.toCharArray()[j];
-
-                if(wordLetter == letter){
-                    if(i == j) color[j] = "\033[0;32m";
-                    if(i != j) color[j] = "\033[0;33m";
-                }
-            }
-        }
-
-        for(int i = 0; i < guess.length(); i++){
-            s.append(color[i]);
-            s.append(guess.toCharArray()[i]);
-        }
-        s.append("\033[0m");
-
-        return s.toString();
     }
 }
