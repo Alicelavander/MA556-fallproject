@@ -5,9 +5,9 @@ public class Frame extends JFrame {
 
     Frame(){
         addKeyListener(new InputListener());
-        setBackground(Color.GRAY);
+        setBackground(Color.WHITE);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(400, 340);
+        setSize(640, 480);
         setResizable(false);
         setVisible(true);
     }

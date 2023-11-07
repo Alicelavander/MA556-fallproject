@@ -1,6 +1,9 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/*
+Reference: https://docs.oracle.com/javase/tutorial/uiswing/events/keylistener.html
+ */
 public class InputListener implements KeyListener {
 
     @Override
