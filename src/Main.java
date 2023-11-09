@@ -1,3 +1,5 @@
+import graphics.Game;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -13,27 +15,28 @@ public class Main {
         Scanner s = new Scanner(System.in);
 
         //setup new game
-        newGame();
-        System.out.println("Welcome to Wordle!");
+        Game game = new Game();
 
-        while(!endGame){
-            System.out.print("guess: ");
-            String response = s.nextLine().substring(0, 5);
-            Word guess = new Word(response, 5);
-            guesses.add(0, guess);
-
-            System.out.println(guess.checkWithAnswer(word));
-
-            if(guess.correctLetters() == guess.length()) endGame = true;
-        }
-
-        System.out.println("Correct! Well done. Number of attempts: " + guesses.size());
-    }
-
-    public static void newGame() {
         word = newWord();
         guesses = new ArrayList<>();
         attempts = 0;
+
+//        System.out.println("Welcome to Wordle!");
+//
+//        while(!endGame){
+//            System.out.print("guess: ");
+//            //TODO: validation for <5 letter inputs
+//            //cuts anything over 6 letters to 5.
+//            String response = s.nextLine().substring(0, 5);
+//            Word guess = new Word(response, 5);
+//            guesses.add(0, guess);
+//
+//            System.out.println(guess.checkWithAnswer(word));
+//
+//            if(guess.correctLetters() == guess.length()) endGame = true;
+//        }
+//
+//        System.out.println("Correct! Well done. Number of attempts: " + guesses.size());
     }
 
     public static String newWord() {

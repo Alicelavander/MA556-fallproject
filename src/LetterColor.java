@@ -1,5 +1,7 @@
 /*
-Reference: https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+Reference:
+    https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+    TODO: color escape color
  */
 enum LetterColor{
     UNDECIDED(""),
