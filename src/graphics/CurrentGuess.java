@@ -36,8 +36,8 @@ public class CurrentGuess extends JPanel implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        if (e.getKeyChar() != '\b') s += e.getKeyChar();
-        else if (s.length() > 0) s = s.substring(0, s.length() - 1);
+        if (e.getKeyChar() == '\b' && s.length() > 0) s = s.substring(0, s.length() - 1);
+        else if (e.getKeyChar() != '\b' && s.length() < 5) s += e.getKeyChar();
         super.removeAll();
         super.repaint();
     }
