@@ -2,12 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Game extends JFrame implements ActionListener {
     private final String word; //actual word
     private JPanel[] guesses; //list of words guessed by the user
     private int attempt;
-    private boolean endGame;
+    private boolean correct;
     private JPanel panel;
 
     public Game(String word){
@@ -20,6 +23,7 @@ public class Game extends JFrame implements ActionListener {
         setVisible(true);
 
         attempt = 0;
+        correct = false;
 
         this.word = word;
         guesses = new JPanel[]{
@@ -44,19 +48,27 @@ public class Game extends JFrame implements ActionListener {
         panel.revalidate();
         panel.repaint();
 
-        if(attempt == 6) System.out.println("correct word: " + word);
+        //TODO
+        if(correct);
+        else if(attempt == 6){
+            System.out.println("game over: correct word was " + word);
+        }
     }
 
+    /* If Enter-key pressed, submit the word as the answer.
+        Reference: https://docs.oracle.com/javase/tutorial/uiswing/events/actionlistener.html
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("guessSubmitted")) {
             String guess = ((CurrentGuess)e.getSource()).getClientProperty("guess").toString();
+            System.out.println("received word: " + guess);
+
             guesses[attempt] = new GuessedWord(new Word(guess), word);
             attempt++;
+            if(guess.equals(word)) correct = true;
 
             makeScreen();
-
-            System.out.println("received word: " + guess);
         }
     }
 }
