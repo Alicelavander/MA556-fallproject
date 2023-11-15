@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d39255ad-711e-42d6-977a-9207d8484f80" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MA556-fallproject/CurrentGuess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MA556-fallproject/CurrentGuess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MA556-fallproject/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MA556-fallproject/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CurrentGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentGuess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699812357305</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="adjust code to fit requirement💀">
+      <created>1700014673221</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700014673221</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +174,7 @@
     <MESSAGE value="changed word options" />
     <MESSAGE value="wip, main part done" />
     <MESSAGE value="word options" />
-    <option name="LAST_COMMIT_MESSAGE" value="word options" />
+    <MESSAGE value="adjust code to fit requirement" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust code to fit requirement" />
   </component>
 </project>

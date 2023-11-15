@@ -1,9 +1,6 @@
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
@@ -11,15 +8,14 @@ public class Main{
         Game game = new Game(newWord());
     }
 
+    /* select a word randomly from a list of five-letter words
+    Original List retrieved from: https://gist.github.com/scholtes/94f3c0303ba6a7768b47583aff36654d
+    Reference:
+        https://docs.oracle.com/javase/jp/8/docs/api/java/io/FileReader.html
+        https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html
+        https://stackoverflow.com/questions/30465507/how-to-grab-a-random-line-from-a-text-file-and-print-the-line
+     */
     public static String newWord() {
-        /* select a word randomly from a list of five-letter words
-        Original List retrieved from: https://gist.github.com/scholtes/94f3c0303ba6a7768b47583aff36654d
-        Reference:
-            https://docs.oracle.com/javase/jp/8/docs/api/java/io/FileReader.html
-            https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html
-            https://stackoverflow.com/questions/30465507/how-to-grab-a-random-line-from-a-text-file-and-print-the-line
-         */
-
         final File file = new File("src/wordle-La.txt");
 
         try{
