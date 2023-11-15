@@ -6,7 +6,8 @@ public class GuessedWord extends JPanel {
 
     public GuessedWord(Word guess, String answer){
         this.guess = guess;
-        this.guess.checkWithAnswer(answer); //TODO: I don't like this
+        //assign color to each letters
+        this.guess.checkWithAnswer(answer);
     }
 
     public void paintComponent(Graphics g) {
