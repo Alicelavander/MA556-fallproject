@@ -40,9 +40,11 @@ public class CurrentGuess extends JPanel implements KeyListener {
         //Don't add to string if they are escape characters
         switch(e.getKeyChar()){
             case '\b':
+                //backspace entered, delete letter
                 if(!inputString.isEmpty()) inputString = inputString.substring(0, inputString.length() - 1);
                 break;
             case '\n':
+                //submit word if the string is 5 letter (the input is complete)
                 if(inputString.length() == 5){
                     checkAndSubmitWord(inputString);
                     inputString = "";
